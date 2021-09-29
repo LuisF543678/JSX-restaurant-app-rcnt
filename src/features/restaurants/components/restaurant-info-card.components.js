@@ -14,8 +14,8 @@ const RestaurantCardCover = styled(Card.Cover)`
 
 /**
  *  @method match with const Title
- *  non-functional code
- *  font-size: ${(props) => props.theme.fontSizes.body};
+ * non-functional code
+ * font-size: ${(props) => props.theme.fontSizes.body};
  * font-family: ${(props) => props.theme.fontSizes.caption};
  */
 const Title = styled.Text`
@@ -45,7 +45,7 @@ const Star = styled(Card.Cover)`
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
-    name = "Susi nice restaurant",
+    name = "The best restaurant",
     icon,
     photos = [
       "https://cdn.pixabay.com/photo/2016/11/18/14/05/brick-wall-1834784_960_720.jpg",
