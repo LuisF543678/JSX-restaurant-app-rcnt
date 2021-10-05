@@ -1,5 +1,5 @@
-import React from "react";
-import { Text, StyleSheet } from "react-native";
+import React, { Fragment } from "react";
+import { Text, StyleSheet, Image, View } from "react-native";
 import { Card } from "react-native-paper";
 import styled from "styled-components/native";
 
@@ -23,6 +23,15 @@ const Title = styled.Text`
   color: ${(props) => props.theme.colors.text.primary};
 `;
 
+const Warning = styled.Text`
+  font-size: 16px;
+  color: #ff7058;
+  text-transform: uppercase;
+  font-weight: bold;
+  white-space: nowrap;
+  font-size: 10px;
+`;
+
 /**
  * @method match with const Address
  * non-functional code
@@ -30,6 +39,11 @@ const Title = styled.Text`
  * font-family: ${(props) => props.theme.fontSizes.caption};
  */
 const Address = styled.Text``;
+const Status = styled(Card.Cover)`
+  float: right;
+  with: 5px;
+  height: auto;
+`;
 
 const Info = styled.View`
   padding: ${(props) => props.theme.space[3]};
@@ -53,7 +67,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     address = "Some random street",
     isOpenNow = true,
     rating = 4,
-    isClosedTemporaly,
+    isClosedTemporaly = true,
     stars = require("../../../../assets/star.ico"),
   } = restaurant;
 
@@ -68,10 +82,18 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
       <Info>
         <Title>{name}</Title>
         <div>
-          {ratingArray.map((str) => (
-            <Star source={{ uri: stars }} />
+          {ratingArray.map((str, i) => (
+            <Star key={i} source={{ uri: stars }} />
           ))}
-          <Title>{rating}</Title>
+
+          {isOpenNow && (
+            <Status source={{ uri: require("../../../../assets/open.png") }} />
+          )}
+          {isClosedTemporaly && (
+            <Fragment>
+              <Warning>CLOSED TEMPORALY</Warning>             
+            </Fragment>
+          )}
         </div>
         <Address>{address}</Address>
       </Info>
