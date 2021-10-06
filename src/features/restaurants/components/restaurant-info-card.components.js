@@ -6,6 +6,7 @@ import styled from "styled-components/native";
 const RestaurantCard = styled(Card)`
   background-color: white;
   padding: 16px;
+  margin-button:16;
 `;
 
 const RestaurantCardCover = styled(Card.Cover)`
