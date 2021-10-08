@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import {
   SafeAreaView,
   View,
@@ -11,7 +11,6 @@ import {
 import { Searchbar } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.components";
 import styled from "styled-components/native";
-
 //console.log(Platform);
 //const isAndroid = Platform.OS === "android";
 //console.log(Platform.OS === "android");

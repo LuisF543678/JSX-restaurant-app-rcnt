@@ -11,7 +11,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 //import { restaurantsRequest } from "./src/services/restaurants/restaurant.services";
 
-import { RestauranContextProvider } from "./src/services/restaurants/restaurant.context";
+import { RestaurantContextProvider } from "./src/services/restaurants/restaurant.context";
 
 /*
  *  non-functional code import font no aviable on the web
@@ -35,7 +35,7 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestauranContextProvider>
+        <RestaurantContextProvider>
         <NavigationContainer>
           <Tab.Navigator
             screenOptions={({ route }) => ({
@@ -62,7 +62,7 @@ export default function App() {
             <Tab.Screen name="Settings" component={Settings} />
           </Tab.Navigator>
         </NavigationContainer>
-        </RestauranContextProvider>
+        </RestaurantContextProvider>
       </ThemeProvider>
     </>
   );

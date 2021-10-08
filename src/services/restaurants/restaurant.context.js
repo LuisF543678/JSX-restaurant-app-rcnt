@@ -1,12 +1,10 @@
-import React, { useState, createContext, useEffect, useMeno } from "react;";
-
-import { restaurantsRequest, restaurantsTransform } from "./restaurant.services";
+import React, { useState, createContext, useEffect, useMeno } from "react";
 
 export const RestauranContext = createContext();
 
-export const RestauranContextProvider = ({children}) =>{
-    return
-        <RestauranContext.Provider>
-            {children}
-        </RestauranContext.Provider>;
+export const RestaurantContextProvider = ({ children }) => {
+    return(
+    <RestauranContext.Provider>
+        {children}
+    </RestauranContext.Provider>);
 };
