@@ -59,6 +59,7 @@ const Star = styled(Card.Cover)`
 `;
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
+  console.log(restaurant.name);
   const {
     name = "The best restaurant",
     icon,
@@ -76,7 +77,8 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
    * Change ceil or floor
    */
   const ratingArray = Array.from(new Array(Math.ceil(rating)));
-  console.log(ratingArray);
+  //console.log(ratingArray);<span role="img" aria-label="sheep"></span>
+  console.log("hola")
   return (
     <RestaurantCard>
       <RestaurantCardCover elevation={5} source={{ uri: photos[0] }} />
@@ -91,9 +93,8 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
             <Status source={{ uri: require("../../../../assets/open.png") }} />
           )}
           {isClosedTemporaly && (
-            <Fragment>
-              <Warning>CLOSED TEMPORALY</Warning>             
-            </Fragment>
+            <Warning>CLOSED TEMPORALY</Warning>
+
           )}
         </div>
         <Address>{address}</Address>
